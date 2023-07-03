@@ -19,5 +19,4 @@ If the user provides valid credentials, they are redirected to a welcome page th
 
 ## Contributing
 
-Contributions are welcome! 
-Listen, just like with most of my projects, I would appreciate help on the front end
+Listen,I would appreciate help on the front end

@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -53,4 +54,4 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=os.getenv("PORT", default=5000)) #type: ignore
