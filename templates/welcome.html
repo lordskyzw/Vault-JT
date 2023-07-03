@@ -2,23 +2,38 @@
 <html>
 <head>
     <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .logout-button {
+            margin-top: 20px;
+        }
+
+        .logout-button a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to Your Vault</h1>
-    <p>Your stored phrase: {{ phrase }}</p>
-
-    <h2>Update Phrase</h2>
-    <form action="/update_phrase" method="POST">
-        <label for="national_id">National ID:</label>
-        <input type="text" id="national_id" name="national_id" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-
-        <label for="phrase">New Phrase:</label>
-        <input type="text" id="phrase" name="phrase" required><br>
-
-        <input type="submit" value="Update">
-    </form>
+    <p>Your fighter is: {{ phrase }}</p>
+    <div class="logout-button">
+        <a href="/signup">Logout</a>
+    </div>
 </body>
 </html>
