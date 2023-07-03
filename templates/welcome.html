@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to Your Vault</h1>
+    <p>Your stored phrase: {{ phrase }}</p>
+
+    <h2>Update Phrase</h2>
+    <form action="/update_phrase" method="POST">
+        <label for="national_id">National ID:</label>
+        <input type="text" id="national_id" name="national_id" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="phrase">New Phrase:</label>
+        <input type="text" id="phrase" name="phrase" required><br>
+
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
