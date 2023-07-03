@@ -12,7 +12,7 @@ This is as a vault I developed just to store bets for the Musk vs Zuck fight
 
 The application provides two routes:
 
-- `/signup`: Allows users to sign up by providing their national ID, password, and a  phrase.
+- `/`: Allows users to sign up by providing their national ID, password, and a  phrase.
 - `/login`: Allows users to log in by providing their national ID and password.
 
 If the user provides valid credentials, they are redirected to a welcome page that displays their secret phrase.
