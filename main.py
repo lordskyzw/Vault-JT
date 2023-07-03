@@ -12,7 +12,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     national_id = db.Column(db.String(20), unique=True)
     password_hash = db.Column(db.String(128))
-    phrase = db.Column(db.String(100), nullable=False)
+    fighter = db.Column(db.String(20), nullable=False)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -25,12 +25,12 @@ def signup():
     if request.method == 'POST':
         national_id = request.form['national_id']
         password = request.form['password']
-        phrase = request.form['phrase']
+        fighter = request.form['fighter']
 
         if User.query.filter_by(national_id=national_id).first():
             return "User already exists"
 
-        new_user = User(national_id=national_id, phrase=phrase)
+        new_user = User(national_id=national_id, fighter=fighter)
         new_user.set_password(password)
         db.session.add(new_user)
         db.session.commit()
@@ -47,7 +47,7 @@ def login():
 
         user = User.query.filter_by(national_id=national_id).first()
         if user and user.check_password(password):
-            return render_template('welcome.html', phrase=user.phrase)
+            return render_template('welcome.html', fighter=user.fighter)
         else:
             return "Invalid credentials"
 
